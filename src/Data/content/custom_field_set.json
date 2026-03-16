@@ -1,0 +1,92 @@
+[
+  {
+    "id": "{ID:CUSTOM_FIELD}",
+    "name": "appflix_ad",
+    "config": {
+      "label": {
+        "en-GB": "Additional information",
+        "de-DE": "Zusätzliche Angaben"
+      }
+    },
+    "relations": [
+      {
+        "id": "{ID:appflix_ad}",
+        "entityName": "appflix_ad"
+      }
+    ],
+    "customFields": [
+      {
+        "name": "traces_of_use",
+        "type": "text",
+        "config": {
+          "componentName": "sw-text-field",
+          "customFieldType": "text",
+          "label": {
+            "en-GB": "Traces of use",
+            "de-DE": "Gebrauchsspuren"
+          }
+        }
+      },
+      {
+        "name": "warranty",
+        "type": "text",
+        "config": {
+          "componentName": "sw-text-field",
+          "customFieldType": "text",
+          "label": {
+            "en-GB": "Warranty",
+            "de-DE": "Garantie"
+          }
+        }
+      },
+      {
+        "name": "purchase_year",
+        "type": "text",
+        "config": {
+          "componentName": "sw-text-field",
+          "customFieldType": "text",
+          "label": {
+            "en-GB": "Purchase year",
+            "de-DE": "Kaufjahr"
+          }
+        }
+      },
+      {
+        "name": "invoice_available",
+        "type": "bool",
+        "config": {
+          "componentName": "sw-switch-field",
+          "customFieldType": "switch",
+          "label": {
+            "en-GB": "Invoice available",
+            "de-DE": "Rechnung vorhanden"
+          }
+        }
+      },
+      {
+        "name": "payment_options",
+        "type": "text",
+        "config": {
+          "componentName": "sw-text-field",
+          "customFieldType": "text",
+          "label": {
+            "en-GB": "Payment options",
+            "de-DE": "Zahlungsoptionen"
+          }
+        }
+      },
+      {
+        "name": "shipping_options",
+        "type": "text",
+        "config": {
+          "componentName": "sw-text-field",
+          "customFieldType": "text",
+          "label": {
+            "en-GB": "Shipping options",
+            "de-DE": "Versandoptionen"
+          }
+        }
+      }
+    ]
+  }
+]

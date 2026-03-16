@@ -1,0 +1,43 @@
+{
+    "appflix-customer-market": {
+        "traces_of_useTooltip": "traces_of_useTooltip (You can change it in Admin Snippets. Use 'none' to hide this tooltip)",
+        "warrantyTooltip": "warrantyTooltip (You can change it in Admin Snippets. Use 'none' to hide this tooltip)",
+        "purchase_yearTooltip": "purchase_yearTooltip (You can change it in Admin Snippets. Use 'none' to hide this tooltip)",
+        "payment_optionsTooltip": "payment_optionsTooltip (You can change it in Admin Snippets. Use 'none' to hide this tooltip)",
+        "shipping_optionsTooltip": "shipping_optionsTooltip (You can change it in Admin Snippets. Use 'none' to hide this tooltip)",
+        "placeholderSelect": "Please chose",
+        "traces_of_use": "Traces of use",
+        "warranty": "Warranty",
+        "purchase_year": "Purchase year",
+        "invoice_available": "Invoice available",
+        "payment_options": "Payment options",
+        "shipping_options": "Shipping options",
+        "traces_of_use_original_package": "Original package",
+        "traces_of_use_new": "New",
+        "traces_of_use_as_good_as_new": "As good as new",
+        "traces_of_use_well_cared": "Well cared",
+        "traces_of_use_used": "Used",
+        "traces_of_use_damaged": "Damaged",
+        "payment_options_cash": "Cash",
+        "payment_options_bank_transfer": "Bank transfer",
+        "payment_options_paypal": "PayPal",
+        "shipping_options_pick_up": "Pick up",
+        "shipping_options_shipping_buyer": "Buyer pays for shipping",
+        "shipping_options_shipping_seller": "Seller pays for shipping",
+        "yes": "Yes",
+        "no": "No"
+    },
+    "customer-market-theme": {
+        "postAdButton": "Post Ad",
+        "showAllAds": "Show all Ads",
+
+        "footer": {
+            "title": {
+                "postAd": "Post ad"
+            },
+            "description": {
+                "postAd": "You would like to place your ad in our store? No problem. Simply use our form."
+            }
+        }
+    }
+}

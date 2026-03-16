@@ -1,0 +1,83 @@
+{% sw_extends "@AppflixCustomerMarket/appflix-customer-market/page/appflix-ad-detail/index.html.twig" %}
+
+{% block page_appflix_ad_detail_section_description %}
+    {{ parent() }}
+
+    {% if not config('AppflixCustomerMarketExtension.config.appflixAdTypes1') or appflixAd.typeId in config('AppflixCustomerMarketExtension.config.appflixAdTypes1') %}
+        <div class="section">
+            <div class="row">
+                {% if appflixAd.customFields.traces_of_use %}
+                    <div class="col-3">
+                        <div class="h4">
+                            {{ "appflix-customer-market.traces_of_use"|trans }}
+                        </div>
+                        <p>{{ "appflix-customer-market.#{appflixAd.customFields.traces_of_use}"|trans }}</p>
+                    </div>
+                {% endif %}
+
+                {% if appflixAd.customFields.warranty %}
+                    <div class="col-3">
+                        <div class="h4">
+                            {{ "appflix-customer-market.warranty"|trans }}
+                        </div>
+                        <p>{{ appflixAd.customFields.warranty }}</p>
+                    </div>
+                {% endif %}
+
+                {% if appflixAd.customFields.purchase_year %}
+                    <div class="col-3">
+                        <div class="h4">
+                            {{ "appflix-customer-market.purchase_year"|trans }}
+                        </div>
+                        <p>{{ appflixAd.customFields.purchase_year }}</p>
+                    </div>
+                {% endif %}
+
+                <div class="col-3">
+                    <div class="h4">
+                        {{ "appflix-customer-market.invoice_available"|trans }}
+                    </div>
+                    <p>
+                        {% if appflixAd.customFields.invoice_available %}
+                            {{ "appflix-customer-market.yes"|trans }}
+                        {% else %}
+                            {{ "appflix-customer-market.no"|trans }}
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="row">
+                {% if appflixAd.customFields.payment_options %}
+                    <div class="col-12 col-lg-6">
+                        <div class="h4">
+                            {{ "appflix-customer-market.payment_options"|trans }}
+                        </div>
+
+                        <p>
+                            {% for option in appflixAd.customFields.payment_options|split(",") %}
+                                {{ "appflix-customer-market.payment_options_#{option}"|trans }}<br>
+                            {% endfor %}
+                        </p>
+                    </div>
+                {% endif %}
+
+                {% if appflixAd.customFields.shipping_options %}
+                    <div class="col-12 col-lg-6">
+                        <div class="h4">
+                            {{ "appflix-customer-market.shipping_options"|trans }}
+                        </div>
+
+                        <p>
+                            {% for option in appflixAd.customFields.shipping_options|split(",") %}
+                                {{ "appflix-customer-market.shipping_options_#{option}"|trans }}<br>
+                            {% endfor %}
+                        </p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

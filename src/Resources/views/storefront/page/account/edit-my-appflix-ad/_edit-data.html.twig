@@ -1,0 +1,193 @@
+{% sw_extends "@AppflixCustomerMarket/storefront/page/account/edit-my-appflix-ad/_edit-data.html.twig" %}
+
+{% block edit_data_general_name %}
+    {{ parent() }}
+
+    {% if not config('AppflixCustomerMarketExtension.config.appflixAdTypes1') or appflixAd.typeId in config('AppflixCustomerMarketExtension.config.appflixAdTypes1') %}
+        {% set customFieldSet = {
+            traces_of_use: 'text',
+            warranty: 'text',
+            purchase_year: 'text',
+            invoice_available: 'bool',
+            payment_options: 'array',
+            shipping_options: 'array'
+        } %}
+
+        <input type="hidden" name="customFieldSet" value='{{ customFieldSet|json_encode|raw }}'>
+
+        <div class="col-12 col-lg-3">
+            <div class="form-group">
+                <label class="form-label" for="traces_of_use">
+                    {{ "appflix-customer-market.traces_of_use"|trans }} {{ "general.required"|trans }}
+                    {% if "appflix-customer-market.traces_of_useTooltip"|trans != 'none' %}
+                        <span data-bs-toggle="tooltip" data-bs-placement="top" title="{{ "appflix-customer-market.traces_of_useTooltip"|trans }}">?</span>
+                    {% endif %}
+                </label>
+
+                <select class="form-select"
+                        name="customFields[traces_of_use]"
+                        id="traces_of_use"
+                        value="{{ appflixAd.customFields.traces_of_use }}"
+                        placeholder="{{ "appflix-customer-market.traces_of_use"|trans }}"
+                        required>
+                    <option selected disabled value>
+                        {{ "appflix-customer-market.placeholderSelect"|trans }}
+                    </option>
+
+                    {% for option in [
+                        'traces_of_use_original_package',
+                        'traces_of_use_new',
+                        'traces_of_use_as_good_as_new',
+                        'traces_of_use_well_cared',
+                        'traces_of_use_used',
+                        'traces_of_use_damaged'
+                    ] %}
+                        <option value="{{ option }}" {% if option == appflixAd.customFields.traces_of_use %}selected{% endif %}>
+                            {{ "appflix-customer-market.#{option}"|trans }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-3">
+            <div class="form-group">
+                <label class="form-label" for="warranty">
+                    {{ "appflix-customer-market.warranty"|trans }} {{ "general.required"|trans }}
+                    {% if "appflix-customer-market.warrantyTooltip"|trans != 'none' %}
+                        <span data-bs-toggle="tooltip" data-bs-placement="top" title="{{ "appflix-customer-market.warrantyTooltip"|trans }}">?</span>
+                    {% endif %}
+                </label>
+                <input type="text"
+                       name="customFields[warranty]"
+                       id="warranty"
+                       value="{{ appflixAd.customFields.warranty }}"
+                       placeholder="{{ "appflix-customer-market.warranty"|trans }}"
+                       required
+                       class="form-control">
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-3">
+            <div class="form-group">
+                <label class="form-label" for="purchase_year">
+                    {{ "appflix-customer-market.purchase_year"|trans }} {{ "general.required"|trans }}
+                    {% if "appflix-customer-market.purchase_yearTooltip"|trans != 'none' %}
+                        <span data-bs-toggle="tooltip" data-bs-placement="top" title="{{ "appflix-customer-market.purchase_yearTooltip"|trans }}">?</span>
+                    {% endif %}
+                </label>
+                <input type="text"
+                       name="customFields[purchase_year]"
+                       id="purchase_year"
+                       value="{{ appflixAd.customFields.purchase_year }}"
+                       placeholder="{{ "appflix-customer-market.purchase_year"|trans }}"
+                       required
+                       class="form-control">
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-3 align-content-center">
+            <div class="form-group">
+                <div class="form-check custom-switch">
+                    <input type="checkbox"
+                           class="form-check-input"
+                           id="invoice_available"
+                           name="customFields[invoice_available]"
+                           value="true"
+                           {% if appflixAd.customFields.invoice_available %}checked{% endif %}>
+                    <label class="form-check-label" for="invoice_available">
+                        {{ 'appflix-customer-market.invoice_available'|trans }}
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-6">
+            <div class="form-group">
+                <label class="form-label">
+                    {{ "appflix-customer-market.payment_options"|trans }} {{ "general.required"|trans }}
+                    {% if "appflix-customer-market.payment_optionsTooltip"|trans != 'none' %}
+                        <span data-bs-toggle="tooltip" data-bs-placement="top" title="{{ "appflix-customer-market.payment_optionsTooltip"|trans }}">?</span>
+                    {% endif %}
+                </label>
+                <div class="form-check">
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value="cash"
+                           id="payment_options_cash"
+                           name="customFields[payment_options][]"
+                           {% if 'cash' in appflixAd.customFields.payment_options %}checked{% endif %}>
+                    <label class="form-check-label" for="payment_options_cash">
+                        {{ "appflix-customer-market.payment_options_cash"|trans }}
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value="bank_transfer"
+                           id="payment_options_bank_transfer"
+                           name="customFields[payment_options][]"
+                           {% if 'bank_transfer' in appflixAd.customFields.payment_options %}checked{% endif %}>
+                    <label class="form-check-label" for="payment_options_bank_transfer">
+                        {{ "appflix-customer-market.payment_options_bank_transfer"|trans }}
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value="paypal"
+                           id="payment_options_paypal"
+                           name="customFields[payment_options][]"
+                           {% if 'paypal' in appflixAd.customFields.payment_options %}checked{% endif %}>
+                    <label class="form-check-label" for="payment_options_paypal">
+                        {{ "appflix-customer-market.payment_options_paypal"|trans }}
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-6">
+            <div class="form-group">
+                <label class="form-label">
+                    {{ "appflix-customer-market.shipping_options"|trans }} {{ "general.required"|trans }}
+                    {% if "appflix-customer-market.shipping_optionsTooltip"|trans != 'none' %}
+                        <span data-bs-toggle="tooltip" data-bs-placement="top" title="{{ "appflix-customer-market.shipping_optionsTooltip"|trans }}">?</span>
+                    {% endif %}
+                </label>
+                <div class="form-check">
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value="pick_up"
+                           id="shipping_options_pick_up"
+                           name="customFields[shipping_options][]"
+                           {% if 'pick_up' in appflixAd.customFields.shipping_options %}checked{% endif %}>
+                    <label class="form-check-label" for="shipping_options_pick_up">
+                        {{ "appflix-customer-market.shipping_options_pick_up"|trans }}
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value="shipping_buyer"
+                           id="shipping_options_shipping_buyer"
+                           name="customFields[shipping_options][]"
+                           {% if 'shipping_buyer' in appflixAd.customFields.shipping_options %}checked{% endif %}>
+                    <label class="form-check-label" for="shipping_options_shipping_buyer">
+                        {{ "appflix-customer-market.shipping_options_shipping_buyer"|trans }}
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value="shipping_seller"
+                           id="shipping_options_shipping_seller"
+                           name="customFields[shipping_options][]"
+                           {% if 'shipping_seller' in appflixAd.customFields.shipping_options %}checked{% endif %}>
+                    <label class="form-check-label" for="shipping_options_shipping_seller">
+                        {{ "appflix-customer-market.shipping_options_shipping_seller"|trans }}
+                    </label>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,43 @@
+{
+    "appflix-customer-market": {
+        "traces_of_useTooltip": "traces_of_useTooltip (You can change it in Admin Snippets. Use 'none' to hide this tooltip)",
+        "warrantyTooltip": "warrantyTooltip (You can change it in Admin Snippets. Use 'none' to hide this tooltip)",
+        "purchase_yearTooltip": "purchase_yearTooltip (You can change it in Admin Snippets. Use 'none' to hide this tooltip)",
+        "payment_optionsTooltip": "payment_optionsTooltip (You can change it in Admin Snippets. Use 'none' to hide this tooltip)",
+        "shipping_optionsTooltip": "shipping_optionsTooltip (You can change it in Admin Snippets. Use 'none' to hide this tooltip)",
+        "placeholderSelect": "Bitte wählen",
+        "traces_of_use": "Zustand",
+        "warranty": "Garantie",
+        "purchase_year": "Kaufjahr/Datum",
+        "invoice_available": "Kaufrechnung vorhanden",
+        "payment_options": "Zahlungsoptionen",
+        "shipping_options": "Versandoptionen",
+        "traces_of_use_original_package": "Original verpackt",
+        "traces_of_use_new": "Neu",
+        "traces_of_use_as_good_as_new": "Neuwertig",
+        "traces_of_use_well_cared": "Gepflegt",
+        "traces_of_use_used": "Gebraucht",
+        "traces_of_use_damaged": "Defekt",
+        "payment_options_cash": "Barzahlung",
+        "payment_options_bank_transfer": "Banküberweisung",
+        "payment_options_paypal": "PayPal",
+        "shipping_options_pick_up": "Abholung",
+        "shipping_options_shipping_buyer": "Käufer zahlt Versandkosten",
+        "shipping_options_shipping_seller": "Verkäufer zahlt Versandkosten",
+        "yes": "Ja",
+        "no": "Nein"
+    },
+    "customer-market-theme": {
+        "postAdButton": "Kleinanzeige inserieren",
+        "showAllAds": "Alle Kleinanzeigen",
+
+        "footer": {
+            "title": {
+                "postAd": "Kleinanzeige inserieren"
+            },
+            "description": {
+                "postAd": "You would like to place your ad in our store? No problem. Simply use our form."
+            }
+        }
+    }
+}

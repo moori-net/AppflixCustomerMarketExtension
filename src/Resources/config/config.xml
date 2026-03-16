@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
+    <card>
+        <title>#1 - Zusätzliche Angaben in Kleinanzeige</title>
+        <title lang="de-DE">#1 - Zusätzliche Angaben in Kleinanzeige</title>
+
+        <component name="sw-entity-multi-id-select">
+            <name>appflixAdTypes1</name>
+            <entity>appflix_ad_type</entity>
+            <label>Freigabe für Anzeige-Typen</label>
+            <label lang="de-DE">Freigabe für Anzeige-Typen</label>
+        </component>
+
+        <component name="sw-entity-multi-id-select">
+            <name>categories1</name>
+            <entity>category</entity>
+            <label>Freigabe für Kategorien</label>
+            <label lang="de-DE">Freigabe für Kategorien</label>
+        </component>
+    </card>
+</config>

@@ -1,0 +1,41 @@
+{
+  "name": "appflix/customer-extension",
+  "description": "AppflixCustomerMarketExtension",
+  "version": "1.7.0",
+  "type": "shopware-platform-plugin",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Appflix UG",
+      "homepage": "https://www.app-flix.de"
+    }
+  ],
+  "require": {
+    "shopware/core": "~6.7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Appflix\\CustomerMarketExtension\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "Appflix\\CustomerMarketExtension\\AppflixCustomerMarketExtension",
+    "copyright": "(c) by Appflix UG",
+    "label": {
+      "en-GB": "Appflix Classifieds | Extension",
+      "de-DE": "Appflix Kleinanzeigen | Erweiterung"
+    },
+    "description": {
+      "de-DE": "Die Erweiterung ermöglicht es, Kunden eigene Anzeigen inserieren zu lassen. Erweitern Sie Ihren Shop durch User-Generated Content und profitieren Sie von einem besseren SEO-Ranking.",
+      "en-GB": "The extension allows customers to advertise their own classifieds. Enhance your store with user-generated content and benefit from better SEO ranking and traffic numbers."
+    },
+    "manufacturerLink": {
+      "en-GB": "https://www.app-flix.de",
+      "de-DE": "https://www.app-flix.de"
+    },
+    "supportLink": {
+      "en-GB": "https://www.app-flix.de",
+      "de-DE": "https://www.app-flix.de"
+    }
+  }
+}
