@@ -5,12 +5,12 @@
 
     {% if not config('AppflixCustomerMarketExtension.config.appflixAdTypes1') or appflixAd.typeId in config('AppflixCustomerMarketExtension.config.appflixAdTypes1') %}
         {% set customFieldSet = {
-            traces_of_use: 'text',
-            warranty: 'text',
-            purchase_year: 'text',
-            invoice_available: 'bool',
-            payment_options: 'array',
-            shipping_options: 'array'
+            appflix_ad_traces_of_use: 'text',
+            appflix_ad_warranty: 'text',
+            appflix_ad_purchase_year: 'text',
+            appflix_ad_invoice_available: 'bool',
+            appflix_ad_payment_options: 'array',
+            appflix_ad_shipping_options: 'array'
         } %}
 
         <input type="hidden" name="customFieldSet" value='{{ customFieldSet|json_encode|raw }}'>
@@ -25,9 +25,9 @@
                 </label>
 
                 <select class="form-select"
-                        name="customFields[traces_of_use]"
+                        name="customFields[appflix_ad_traces_of_use]"
                         id="traces_of_use"
-                        value="{{ appflixAd.customFields.traces_of_use }}"
+                        value="{{ appflixAd.customFields.appflix_ad_traces_of_use }}"
                         placeholder="{{ "appflix-customer-market.traces_of_use"|trans }}"
                         required>
                     <option selected disabled value>
@@ -42,7 +42,7 @@
                         'traces_of_use_used',
                         'traces_of_use_damaged'
                     ] %}
-                        <option value="{{ option }}" {% if option == appflixAd.customFields.traces_of_use %}selected{% endif %}>
+                        <option value="{{ option }}" {% if option == appflixAd.customFields.appflix_ad_traces_of_use %}selected{% endif %}>
                             {{ "appflix-customer-market.#{option}"|trans }}
                         </option>
                     {% endfor %}
@@ -59,9 +59,9 @@
                     {% endif %}
                 </label>
                 <input type="text"
-                       name="customFields[warranty]"
+                       name="customFields[appflix_ad_warranty]"
                        id="warranty"
-                       value="{{ appflixAd.customFields.warranty }}"
+                       value="{{ appflixAd.customFields.appflix_ad_warranty }}"
                        placeholder="{{ "appflix-customer-market.warranty"|trans }}"
                        required
                        class="form-control">
@@ -77,9 +77,9 @@
                     {% endif %}
                 </label>
                 <input type="text"
-                       name="customFields[purchase_year]"
+                       name="customFields[appflix_ad_purchase_year]"
                        id="purchase_year"
-                       value="{{ appflixAd.customFields.purchase_year }}"
+                       value="{{ appflixAd.customFields.appflix_ad_purchase_year }}"
                        placeholder="{{ "appflix-customer-market.purchase_year"|trans }}"
                        required
                        class="form-control">
@@ -92,9 +92,9 @@
                     <input type="checkbox"
                            class="form-check-input"
                            id="invoice_available"
-                           name="customFields[invoice_available]"
+                           name="customFields[appflix_ad_invoice_available]"
                            value="true"
-                           {% if appflixAd.customFields.invoice_available %}checked{% endif %}>
+                           {% if appflixAd.customFields.appflix_ad_invoice_available %}checked{% endif %}>
                     <label class="form-check-label" for="invoice_available">
                         {{ 'appflix-customer-market.invoice_available'|trans }}
                     </label>
@@ -115,8 +115,8 @@
                            type="checkbox"
                            value="cash"
                            id="payment_options_cash"
-                           name="customFields[payment_options][]"
-                           {% if 'cash' in appflixAd.customFields.payment_options %}checked{% endif %}>
+                           name="customFields[appflix_ad_payment_options][]"
+                           {% if 'cash' in appflixAd.customFields.appflix_ad_payment_options %}checked{% endif %}>
                     <label class="form-check-label" for="payment_options_cash">
                         {{ "appflix-customer-market.payment_options_cash"|trans }}
                     </label>
@@ -126,8 +126,8 @@
                            type="checkbox"
                            value="bank_transfer"
                            id="payment_options_bank_transfer"
-                           name="customFields[payment_options][]"
-                           {% if 'bank_transfer' in appflixAd.customFields.payment_options %}checked{% endif %}>
+                           name="customFields[appflix_ad_payment_options][]"
+                           {% if 'bank_transfer' in appflixAd.customFields.appflix_ad_payment_options %}checked{% endif %}>
                     <label class="form-check-label" for="payment_options_bank_transfer">
                         {{ "appflix-customer-market.payment_options_bank_transfer"|trans }}
                     </label>
@@ -137,8 +137,8 @@
                            type="checkbox"
                            value="paypal"
                            id="payment_options_paypal"
-                           name="customFields[payment_options][]"
-                           {% if 'paypal' in appflixAd.customFields.payment_options %}checked{% endif %}>
+                           name="customFields[appflix_ad_payment_options][]"
+                           {% if 'paypal' in appflixAd.customFields.appflix_ad_payment_options %}checked{% endif %}>
                     <label class="form-check-label" for="payment_options_paypal">
                         {{ "appflix-customer-market.payment_options_paypal"|trans }}
                     </label>
@@ -159,8 +159,8 @@
                            type="checkbox"
                            value="pick_up"
                            id="shipping_options_pick_up"
-                           name="customFields[shipping_options][]"
-                           {% if 'pick_up' in appflixAd.customFields.shipping_options %}checked{% endif %}>
+                           name="customFields[appflix_ad_shipping_options][]"
+                           {% if 'pick_up' in appflixAd.customFields.appflix_ad_shipping_options %}checked{% endif %}>
                     <label class="form-check-label" for="shipping_options_pick_up">
                         {{ "appflix-customer-market.shipping_options_pick_up"|trans }}
                     </label>
@@ -170,8 +170,8 @@
                            type="checkbox"
                            value="shipping_buyer"
                            id="shipping_options_shipping_buyer"
-                           name="customFields[shipping_options][]"
-                           {% if 'shipping_buyer' in appflixAd.customFields.shipping_options %}checked{% endif %}>
+                           name="customFields[appflix_ad_shipping_options][]"
+                           {% if 'shipping_buyer' in appflixAd.customFields.appflix_ad_shipping_options %}checked{% endif %}>
                     <label class="form-check-label" for="shipping_options_shipping_buyer">
                         {{ "appflix-customer-market.shipping_options_shipping_buyer"|trans }}
                     </label>
@@ -181,8 +181,8 @@
                            type="checkbox"
                            value="shipping_seller"
                            id="shipping_options_shipping_seller"
-                           name="customFields[shipping_options][]"
-                           {% if 'shipping_seller' in appflixAd.customFields.shipping_options %}checked{% endif %}>
+                           name="customFields[appflix_ad_shipping_options][]"
+                           {% if 'shipping_seller' in appflixAd.customFields.appflix_ad_shipping_options %}checked{% endif %}>
                     <label class="form-check-label" for="shipping_options_shipping_seller">
                         {{ "appflix-customer-market.shipping_options_shipping_seller"|trans }}
                     </label>

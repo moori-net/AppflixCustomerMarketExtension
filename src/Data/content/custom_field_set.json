@@ -16,7 +16,7 @@
     ],
     "customFields": [
       {
-        "name": "traces_of_use",
+        "name": "appflix_ad_traces_of_use",
         "type": "text",
         "config": {
           "componentName": "sw-text-field",
@@ -28,7 +28,7 @@
         }
       },
       {
-        "name": "warranty",
+        "name": "appflix_ad_warranty",
         "type": "text",
         "config": {
           "componentName": "sw-text-field",
@@ -40,7 +40,7 @@
         }
       },
       {
-        "name": "purchase_year",
+        "name": "appflix_ad_purchase_year",
         "type": "text",
         "config": {
           "componentName": "sw-text-field",
@@ -52,7 +52,7 @@
         }
       },
       {
-        "name": "invoice_available",
+        "name": "appflix_ad_invoice_available",
         "type": "bool",
         "config": {
           "componentName": "sw-switch-field",
@@ -64,7 +64,7 @@
         }
       },
       {
-        "name": "payment_options",
+        "name": "appflix_ad_payment_options",
         "type": "text",
         "config": {
           "componentName": "sw-text-field",
@@ -76,7 +76,7 @@
         }
       },
       {
-        "name": "shipping_options",
+        "name": "appflix_ad_shipping_options",
         "type": "text",
         "config": {
           "componentName": "sw-text-field",

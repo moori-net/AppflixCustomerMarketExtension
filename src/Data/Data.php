@@ -43,7 +43,7 @@ class Data extends DataExtension implements DataInterface
 
     public function getType(): string
     {
-        return 'demo';
+        return 'data';
     }
 
     public function getPath(): string
